@@ -38,6 +38,8 @@ def get_ref(text):
 if __name__ == "__main__":
     errors = {}
     for ayah in os.listdir(QURAN_FOLDER):
+        if len(ayah) == 6:
+            continue
         ayah_path = os.path.join(QURAN_FOLDER, ayah)
         with open(ayah_path, "r", encoding="utf-8") as f:
             text = f.read()
